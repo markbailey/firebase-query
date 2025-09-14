@@ -42,7 +42,7 @@ export interface QueryResponse<T> extends QueryStatus {
  */
 const useRtDbQuery = <T>(path: string, options: QueryOptions = {}): [QueryResponse<T>, Unsubscribe] => {
   const unsubscribeRef = useRef<Unsubscribe | null>(null);
-  const { db } = useFirebaseApp();
+  const { rtdb } = useFirebaseApp();
   const { status, setError, setIsFetching } = useQueryStatus();
   const [data, setData] = useQueryStore<T>(path);
 
@@ -61,7 +61,7 @@ const useRtDbQuery = <T>(path: string, options: QueryOptions = {}): [QueryRespon
       }, options.timeout ?? 6000);
 
       const unsubscribe = onValue(
-        ref(db, path),
+        ref(rtdb, path),
         (snapshot: DataSnapshot) => {
           clearTimeout(timeout);
           onSuccess(snapshot.val());
@@ -80,7 +80,7 @@ const useRtDbQuery = <T>(path: string, options: QueryOptions = {}): [QueryRespon
         unsubscribe();
       };
     },
-    [db],
+    [],
   );
 
   const unsubscribe = useCallback<Unsubscribe>(() => unsubscribeRef.current?.(), []);

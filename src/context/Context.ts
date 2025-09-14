@@ -4,7 +4,7 @@ import { createContext } from 'react';
 
 export interface FirebaseApp {
   appName: string;
-  db: Database;
+  rtdb: Database;
   firestore: Firestore;
 }
 

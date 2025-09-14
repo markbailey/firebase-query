@@ -23,7 +23,7 @@ interface MutationStatus extends Omit<QueryStatus, 'isFetching'> {
  * - The hook relies on `useFirebaseClient` for the database instance and `useQueryStatus` for status management.
  */
 const useRtDbMutation = <T>(path: string): [(value: T) => Promise<void>, MutationStatus] => {
-  const { db } = useFirebaseApp();
+  const { rtdb } = useFirebaseApp();
   const { status, setError, setIsFetching: setIsLoading } = useQueryStatus();
 
   const mutate = useCallback(
@@ -34,7 +34,7 @@ const useRtDbMutation = <T>(path: string): [(value: T) => Promise<void>, Mutatio
         setIsLoading(true);
         setError(null);
 
-        set(ref(db, path), value)
+        set(ref(rtdb, path), value)
           .then(resolve)
           .catch((error: Error) => {
             setError(error);

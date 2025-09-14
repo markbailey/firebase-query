@@ -21,10 +21,10 @@ const FirebaseAppProvider: FC<ProviderProps> = ({ options, appName, ...props }) 
   const client = useMemo(() => {
     // Initialize Firebase app, database, and auth here using options
     const app = initializeApp(options, appName);
-    const db = getDatabase(app);
+    const rtdb = getDatabase(app);
     const firestore = getFirestore(app);
 
-    return { appName, db, firestore };
+    return { appName, rtdb, firestore };
   }, [options, appName]);
 
   return <ContextProvider value={client} {...props} />;
