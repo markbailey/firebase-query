@@ -1,6 +1,6 @@
 # firebase-query
 
-A TypeScript library for querying Firebase and managing local cache with IndexedDB, designed for React applications. Built with Vite for fast builds and modern tooling.
+A TypeScript library for querying Firebase, designed for React applications. Built with Vite for fast builds and modern tooling.
 
 ## Features
 
