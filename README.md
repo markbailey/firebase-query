@@ -7,9 +7,9 @@ A TypeScript library for querying Firebase and managing local cache with Indexed
 - Query Firebase collections and documents
 - Local caching using IndexedDB (Dexie)
 - React hooks for query state management
-- Peer dependencies: `firebase`, `react`, `dexie`, `dexie-react-hooks`
+- Peer dependencies: `firebase`, `react`
 
-## Installation
+## Installation`
 
 Install the library and its peer dependencies:
 
