@@ -1,0 +1,23 @@
+{
+  "name": "@markbailey/firebase-query",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && vite build"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.13",
+    "typescript": "~5.8.3",
+    "vite": "^7.1.2",
+    "vite-plugin-dts": "^4.5.4"
+  },
+  "peerDependencies": {
+    "firebase": "^12.2.1",
+    "react": "^19.1.1"
+  },
+  "dependencies": {
+    "dexie": "^4.2.0",
+    "dexie-react-hooks": "^4.2.0"
+  }
+}
