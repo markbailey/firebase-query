@@ -1,30 +1,21 @@
-# Vite TypeScript Library
+# firebase-query
 
-This project is a JavaScript library scaffolded with Vite and TypeScript.
+A TypeScript library for querying Firebase and managing local cache with IndexedDB, designed for React applications. Built with Vite for fast builds and modern tooling.
 
-## Getting Started
+## Features
 
-Install dependencies:
+- Query Firebase collections and documents
+- Local caching using IndexedDB (Dexie)
+- React hooks for query state management
+- Peer dependencies: `firebase`, `react`, `dexie`, `dexie-react-hooks`
 
+## Installation
+
+Install the library and its peer dependencies:
+
+```bash
+npm install firebase-query
 ```
-npm install
-```
-
-Build the library:
-
-```
-npm run build
-```
-
-## Project Structure
-
-- `src/` - Source code for the library
-- `vite.config.ts` - Vite configuration
-- `package.json` - Project metadata and scripts
-
-## Publishing
-
-Update the `package.json` fields as needed before publishing to npm.
 
 ## License
 
